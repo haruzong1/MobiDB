@@ -1,163 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous">
-    <!--js-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://api.manana.kr/exchange/rate.json"></script>
-    <script src="http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99"></script>
-    <style>
-        * {
-            font-family: 'Jua', sans-serif;
-        }
-
-        .img {
-            background-image: url("https://pbs.twimg.com/media/DVHsDmgUQAYJdYH.jpg");
-            background-size: cover;
-            background-position: center;
-            width: 500px;
-            height: 500px;
-        }
-
-        h1 {
-            display: inline;
-            color: chocolate;
-            margin-bottom: 20px;
-        }
-
-        .mkt {
-            margin-bottom: 20px;
-        }
-
-        .all {
-            margin: auto;
-            width: 500px;
-        }
-
-        .apply {
-            text-align: center;
-        }
-
-
-    </style>
-    <script>
-        // apply : if 모든 정보값 있음 -> 데이터 베이스에 등록
-        //            특정 정보값 누락 -> 해당 데이터 기록 alert
-        //질문 : 스파르타에서는
-        function apply() {
-
-            let name = $('#mktName').val();
-            let email = $('#mktEmail').val();
-            let phone = $('#mktPhone').val();
-            let career = $('#mktCareer').val();
-            let salary = $('#mktSalary').val();
-            let resume = $('#inputGroupFile01').val();
-            let rightEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-            if (name == '') {
-                alert('이름을 적어주세요')
-                $('#mktName').focus()
-
-            } else if (email == '') {
-                alert("이메일을 적어주세요.")
-                $('#mktEmail').focus()
-            } else if (rightEmail.test(email) == false) {
-                alert("잘못된 이메일 형식입니다.")
-                $('#mktEmail').focus()
-                return
-            } else if (phone == '') {
-                alert("연락처를 적어주세요")
-                $('#mktPhone').focus()
-            } else if (career == '') {
-                alert("연차를 적어주세요")
-                $('#mktCareer').focus()
-            } else if (career == '') {
-                alert("연차를 적어주세요")
-                $('#mktCareer').focus()
-            } else if (salary == '') {
-                alert('연봉을 적어주세요. 비공개를 원한다면 "-"로 적어주세요.')
-                $('#mktSalary').focus()
-            }else {
-                alert('DB등록완료')
-            }
-        }
-
-
-    </script>
-</head>
-<body>
-
-<div class="all">
-    <!--이미지 div-->
-    <div class="img">
-    </div>
-    <!-- 마케터 info div    -->
-    <div class="mkt">
-        <h1>퍼포먼스 마케터</h1>
-
-
-    </div>
-    <div class="mki_info">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text">이름</span>
-            </div>
-            <input type="text" class="form-control" id="mktName" placeholder="이름을 적어주세요." aria-label="Username"
-                   aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text">이메일</span>
-            </div>
-            <input type="text" class="form-control" id="mktEmail" placeholder="이메일을 적어주세요." aria-label="Username"
-                   aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text">연락처</span>
-            </div>
-            <input type="text" class="form-control" id="mktPhone" placeholder="'-'를 제외하고 적어주세요" aria-label="Username"
-                   aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text">연차</span>
-            </div>
-            <input type="int" class="form-control" placeholder="" id="mktCareer" aria-label="Username"
-                   aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text">현재연봉</span>
-            </div>
-            <input type="int" class="form-control" id="mktSalary" placeholder="" aria-label="Username"
-                   aria-describedby="basic-addon1">
-        </div>
-
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon01">이력서 파일</span>
-            </div>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01"
-                       aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">파일 선택</label>
-            </div>
-        </div>
-        <div class="apply">
-            <button onclick="apply()" type="button" class="btn btn-primary">DB등록</button>
-
-        </div>
-
-
-    </div>
-
-
-</div>
-</body>
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>카카오 메시지템플릿빌더를 이용한 링크보내기</title>
+ </head>
+ <body>
+  <a href="javascript:void(0);" id="btn" >카카오 링크보내기</a>
+  <!-- Kakao API -->
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script>
+    Kakao.init('5013a11bafda18bd2a985e8e9dd24c86'); //6번 항목에서 발급 받았던 javascript key를 여기에 넣는다.
+ 
+ $("#btn").click(function(e) { //jquery를 사용한다 가정
+  e.preventDefault();   //이벤트 버블링 prevent
+  
+  Kakao.Link.sendCustom({
+    templateId: 34455   // 15번 항목에서 확인하였던 이벤트번호 등록 
+  });
+ });
+  </script>
+ </body>
 </html>
