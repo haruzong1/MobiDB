@@ -1,20 +1,19 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>:: 카카오톡 공유하기 ::</title>
-<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script type="text/javascript">
-    function shareKakaotalk() {
-        Kakao.init("b98df3620d0003b2cbc90d13fd9b4458");      // 사용할 앱의 JavaScript 키를 설정
-          Kakao.Link.sendCustom({
-    templateId: 34455   // 15번 항목에서 확인하였던 이벤트번호 등록 
-  });
- });
-    }
-</script>
-</head>
-<body>
-    <h1>카카오톡 공유하기</h1>
-    <input type="button" onClick="shareKakaotalk();" value="KAKOA Talk으로 공유하기"/>
-</body>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>:: 카카오톡 공유하기 ::</title>
+      <script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+      <script type="text/javascript">
+         function shareKakaotalk() {
+             Kakao.init("b98df3620d0003b2cbc90d13fd9b4458");      // 사용할 앱의 JavaScript 키를 설정
+               Kakao.Link.sendCustom({
+         templateId: 34455   // 15번 항목에서 확인하였던 이벤트번호 등록 
+         });
+         }
+      </script>
+   </head>
+   <body>
+      <h1>카카오톡 공유하기 1</h1>
+      <input type="button" onClick="shareKakaotalk();" value="KAKOA Talk으로 공유하기"/>
+   </body>
 </html>
